@@ -1,0 +1,8 @@
+{
+  "name": "comprafacil-colombia-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tienda de demostración con registro e inicio de sesión local",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffe600">
+  <title>CompraFácil Colombia | Tienda demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="top-strip">¡Ofertas todos los días! Compra fácil, rápido y desde casa.</div>
+  <header class="site-header">
+    <a class="brand" href="#/" aria-label="CompraFácil inicio"><span class="brand-symbol">↔</span><span>Compra<span>Fácil</span></span></a>
+    <form id="searchForm" class="search">
+      <input id="searchInput" type="search" placeholder="Buscar productos, marcas y más…" aria-label="Buscar productos">
+      <button aria-label="Buscar" type="submit">⌕</button>
+    </form>
+    <div class="header-actions">
+      <button id="locationBtn" class="text-btn location-btn" type="button" title="Configurar ubicación">⌖ <span><small>Enviar a</small><strong id="locationLabel">Medellín</strong></span></button>
+      <button id="accountBtn" class="text-btn">♙ <span id="accountLabel">Ingresa</span></button>
+      <a class="text-btn" href="#/orders">Mis compras</a>
+      <a class="cart-link" href="#/cart">🛒 <span>Carrito</span><b id="cartCount">0</b></a>
+    </div>
+  </header>
+  <nav class="category-nav" id="categoryNav">
+    <button data-category="Todos">☰ Categorías</button>
+    <button data-category="Tecnología">Tecnología</button>
+    <button data-category="Hogar">Hogar</button>
+    <button data-category="Moda">Moda</button>
+    <button data-category="Deportes">Deportes</button>
+    <button data-category="Belleza">Belleza</button>
+    <button data-category="Accesorios">Accesorios</button>
+    <a href="#/offers">Ofertas</a>
+    <a href="#/coupons">Cupones</a>
+    <a href="#/supermarket">Supermercado</a>
+    <a href="#/sell">Vender</a>
+    <a href="#/help">Ayuda / PQR</a>
+  </nav>
+  <main id="app" class="main"></main>
+  <footer>
+    <div class="footer-grid">
+      <div><strong>CompraFácil</strong><p>Proyecto demostrativo de comercio electrónico.</p></div>
+      <div><strong>Compra protegida</strong><p>En esta demo no se realizan cobros reales.</p></div>
+      <div><strong>Ayuda</strong><p>Consulta pedidos de prueba y opciones de compra.</p></div>
+    </div>
+    <small>© 2026 CompraFácil Colombia · Sitio de demostración independiente, no afiliado a Mercado Libre.</small>
+  </footer>
+  <dialog id="locationDialog" class="dialog">
+    <form method="dialog" id="locationForm">
+      <button class="dialog-close" value="cancel" aria-label="Cerrar">×</button>
+      <h2>¿A dónde enviamos?</h2>
+      <p>Configura una ciudad para esta demostración. No consulta transportadoras reales.</p>
+      <label>Ciudad<select id="locationCity"><option>Medellín</option><option>Bogotá</option><option>Cali</option><option>Barranquilla</option><option>Cartagena</option><option>Bucaramanga</option><option>Otra ciudad</option></select></label>
+      <button class="primary full" value="save" id="locationSave">Guardar ubicación</button>
+    </form>
+  </dialog>
+  <dialog id="loginDialog" class="dialog auth-dialog">
+    <form id="loginForm">
+      <button type="button" class="dialog-close" id="authClose" aria-label="Cerrar">×</button>
+      <div class="auth-brand">Compra<span>Fácil</span></div>
+      <div class="auth-tabs"><button type="button" class="auth-tab active" data-auth-mode="login">Ingresar</button><button type="button" class="auth-tab" data-auth-mode="register">Crear cuenta</button></div>
+      <h2 id="authTitle">Ingresa a tu cuenta</h2>
+      <p id="authDescription">Ingresa con el correo electrónico y la contraseña de tu cuenta.</p>
+      <label id="authNameWrap" hidden>Nombre completo<input id="loginName" autocomplete="name" minlength="2" placeholder="Tu nombre"></label>
+      <label>Correo electrónico<input id="loginEmail" type="email" autocomplete="email" required placeholder="tu@correo.com"></label>
+      <label>Contraseña<input id="loginPassword" type="password" autocomplete="current-password" required minlength="8" placeholder="Mínimo 8 caracteres"></label>
+      <label id="authConfirmWrap" hidden>Confirmar contraseña<input id="loginConfirm" type="password" autocomplete="new-password" minlength="8" placeholder="Repite la contraseña"></label>
+      <p id="authError" class="auth-error" role="alert" hidden></p>
+      <button class="primary full" type="submit" id="loginSubmit">Ingresar</button>
+      <p class="auth-legal">Tus datos se guardan en este servidor de demostración. No uses una contraseña que utilices en otros sitios.</p>
+    </form>
+  </dialog>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
